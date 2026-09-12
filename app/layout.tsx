@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: {
@@ -32,8 +34,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${jakarta.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-sans bg-white text-[#111827] antialiased">
-        {children}
+      <body className="min-h-full flex flex-col font-sans antialiased transition-colors duration-300">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

@@ -13,55 +13,77 @@ export default function PackageCard({ pkg }: PackageCardProps) {
 
   return (
     <div
-      className={`relative rounded-2xl p-8 flex flex-col justify-between transition-all duration-200 ${
+      className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 ${
         pkg.popular
-          ? "bg-white text-gray-900 border-2 border-[#00C4D4] shadow-xl lg:-translate-y-1"
-          : "bg-white text-gray-900 border border-gray-200/90 hover:border-gray-300 shadow-xs hover:shadow-md"
+          ? "bg-white dark:bg-gradient-to-b dark:from-[#132A39] dark:to-[#0A1721] text-gray-900 dark:text-white border-2 border-[#00C4D4] shadow-2xl shadow-[#00C4D4]/15 dark:shadow-[0_0_50px_rgba(0,196,212,0.22),inset_0_1px_0_0_rgba(0,196,212,0.7)] lg:-translate-y-3 lg:scale-[1.03] z-20 hover:-translate-y-4"
+          : "bg-white dark:bg-gradient-to-b dark:from-[#11202C] dark:to-[#09131C] text-gray-900 dark:text-white border border-gray-200/90 dark:border-white/[0.06] hover:border-gray-300 dark:hover:border-white/[0.14] shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_10px_30px_-10px_rgba(0,0,0,0.5)] z-10 hover:-translate-y-1"
       }`}
     >
       <div>
+        {/* Most Popular Tag for Center Card */}
+        {pkg.popular && (
+          <div className="mb-3">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-[#00C4D4]/15 dark:bg-[#00C4D4]/20 text-[#00838F] dark:text-[#38D9CD] border border-[#00C4D4]/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00C4D4] animate-pulse"></span>
+              Most Popular • Same-Day Express
+            </span>
+          </div>
+        )}
+
         {/* Package Header */}
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="font-extrabold text-2xl text-gray-900 tracking-tight">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-extrabold text-2xl text-gray-900 dark:text-white tracking-tight">
             {pkg.name}
           </h3>
-          <div className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-700">
-            <Clock className="w-3.5 h-3.5 text-[#00C4D4]" />
+          <div className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg border ${
+            pkg.popular
+              ? "bg-[#00C4D4]/15 dark:bg-[#00C4D4]/20 text-[#00838F] dark:text-[#38D9CD] border-[#00C4D4]/30"
+              : "bg-gray-100 dark:bg-white/[0.06] text-gray-700 dark:text-slate-200 border-gray-200/80 dark:border-white/10"
+          }`}>
+            <Clock className={`w-3.5 h-3.5 ${pkg.popular ? "text-[#00C4D4] dark:text-[#38D9CD]" : "text-gray-400 dark:text-slate-400"}`} />
             <span>{pkg.turnaround}</span>
           </div>
         </div>
 
         {/* Short Description */}
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-slate-300 mb-6 leading-relaxed">
           {pkg.description}
         </p>
 
         {/* Pricing Block */}
-        <div className="pb-6 mb-6 border-b border-gray-100">
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-extrabold text-3xl sm:text-4xl text-gray-900 tracking-tight">
+        <div className={`pb-6 mb-6 border-b ${pkg.popular ? "border-[#00C4D4]/20 dark:border-[#00C4D4]/30" : "border-gray-100 dark:border-white/10"}`}>
+          <div className="flex items-baseline gap-2">
+            <span className={`font-extrabold tracking-tight ${
+              pkg.popular
+                ? "text-3xl sm:text-4xl lg:text-5xl text-gray-900 dark:text-[#5CE1D6]"
+                : "text-3xl sm:text-4xl text-gray-900 dark:text-white"
+            }`}>
               {pkg.price}
             </span>
-            <span className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+            <span className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-slate-300">
               {pkg.unit}
             </span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-500 dark:text-slate-400 mt-1.5">
             *Includes eco wash, delicate dry & seal packaging
           </p>
         </div>
 
         {/* Feature List */}
         <div className="space-y-3.5 mb-8">
-          <p className="text-xs font-bold uppercase tracking-wider text-gray-900">
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-slate-200">
             What’s included:
           </p>
           {pkg.features.map((feature, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <div className="mt-0.5 w-4 h-4 rounded-full bg-[#E0F7FA] text-[#00C4D4] flex items-center justify-center shrink-0">
+              <div className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${
+                pkg.popular
+                  ? "bg-[#00C4D4]/20 text-[#00C4D4] dark:bg-[#00C4D4]/25 dark:text-[#38D9CD]"
+                  : "bg-[#E0F7FA] dark:bg-white/10 text-[#00C4D4] dark:text-slate-200"
+              }`}>
                 <Check className="w-2.5 h-2.5 stroke-[3]" />
               </div>
-              <span className="text-sm text-gray-600 leading-relaxed">
+              <span className={`text-sm leading-relaxed ${pkg.popular ? "text-gray-900 dark:text-white font-semibold" : "text-gray-700 dark:text-slate-200 font-medium"}`}>
                 {feature}
               </span>
             </div>
@@ -69,18 +91,18 @@ export default function PackageCard({ pkg }: PackageCardProps) {
         </div>
       </div>
 
-      {/* Order CTA Button */}
+      {/* Order CTA Button - Solid White vs Glass Styling */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`w-full py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 font-semibold text-sm transition-all duration-200 ${
+        className={`w-full rounded-2xl flex items-center justify-center gap-2 font-bold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 ${
           pkg.popular
-            ? "bg-[#00C4D4] hover:bg-[#00B0BF] text-white shadow-sm hover:shadow"
-            : "bg-gray-900 hover:bg-black text-white hover:shadow-sm"
+            ? "py-4 px-5 text-sm bg-[#00C4D4] hover:bg-[#00B4C3] text-gray-950 shadow-lg shadow-[#00C4D4]/30 hover:shadow-[#00C4D4]/50"
+            : "py-3.5 px-4 text-xs bg-gray-900 hover:bg-black text-white dark:bg-white/[0.08] dark:hover:bg-white/[0.14] dark:text-white dark:border dark:border-white/15"
         }`}
       >
-        <MessageCircle className="w-4 h-4 fill-current" />
+        <MessageCircle className={`w-4 h-4 ${pkg.popular ? "fill-current text-gray-950" : "fill-current"}`} />
         <span>Order Now via WhatsApp</span>
       </a>
     </div>

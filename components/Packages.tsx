@@ -8,15 +8,18 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function Packages() {
   return (
-    <section id="packages" className="py-20 bg-[#F8F9FA] relative overflow-hidden border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="packages" className="py-20 bg-[#F8F9FA] dark:bg-[#060E16] relative overflow-hidden border-b border-gray-100 dark:border-white/10 transition-colors duration-300">
+      {/* Ambient background aura */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(0,196,212,0.1),transparent_70%)] blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header without badges */}
+        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-gray-900 tracking-tight">
+          <h2 className="font-extrabold text-3xl sm:text-4xl lg:text-5xl text-gray-900 dark:text-white tracking-tight">
             Our Packages
           </h2>
-          <p className="mt-3 text-base text-gray-500">
+          <p className="mt-3 text-base sm:text-lg text-gray-600 dark:text-slate-200">
             Choose the service that fits your itinerary. Seamless hotel concierge pickup or doorstep service.
           </p>
         </div>
@@ -28,9 +31,9 @@ export default function Packages() {
           ))}
         </div>
 
-        {/* Packaging Showcase Banner without badges */}
-        <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-4 relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xs">
+        {/* Packaging Showcase Banner */}
+        <div className="bg-white dark:bg-gradient-to-b dark:from-[#132431] dark:to-[#0E1A24] rounded-3xl p-8 sm:p-10 border border-gray-200 dark:border-white/[0.06] shadow-lg dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_20px_40px_-15px_rgba(0,0,0,0.6)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-4 relative rounded-2xl overflow-hidden aspect-[4/3] shadow-md">
             <Image
               src="/images/packages/laverie-packaging.jpg"
               alt="Laverie signature presentation packaging"
@@ -41,21 +44,21 @@ export default function Packages() {
           </div>
 
           <div className="lg:col-span-8 space-y-4">
-            <h3 className="font-extrabold text-2xl sm:text-3xl text-gray-900 tracking-tight">
+            <h3 className="font-extrabold text-2xl sm:text-3xl text-gray-900 dark:text-white tracking-tight">
               Every garment returned crisp, fragrant, and sealed.
             </h3>
-            <p className="text-base text-gray-500 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-slate-200 leading-relaxed font-normal">
               We never return your clothing in flimsy generic plastic bags. Laverie wraps every clean order in anti-dust, breathable sealed packaging, complete with custom garment tags and collar supports, so your wardrobe travels effortlessly.
             </p>
-            <div className="flex flex-wrap gap-4 pt-2 text-sm text-gray-700">
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#00C4D4]" /> Anti-dust dust bag
+            <div className="flex flex-wrap gap-4 pt-2 text-sm text-gray-700 dark:text-slate-200">
+              <span className="flex items-center gap-1.5 font-semibold">
+                <CheckCircle2 className="w-4 h-4 text-[#00C4D4] dark:text-[#5CE1D6]" /> Anti-dust dust bag
               </span>
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#00C4D4]" /> Wooden & velvet hangers upon request
+              <span className="flex items-center gap-1.5 font-semibold">
+                <CheckCircle2 className="w-4 h-4 text-[#00C4D4] dark:text-[#5CE1D6]" /> Wooden & velvet hangers upon request
               </span>
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#00C4D4]" /> Eco-certified biodegradable liners
+              <span className="flex items-center gap-1.5 font-semibold">
+                <CheckCircle2 className="w-4 h-4 text-[#00C4D4] dark:text-[#5CE1D6]" /> Eco-certified biodegradable liners
               </span>
             </div>
           </div>
