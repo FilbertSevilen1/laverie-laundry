@@ -66,10 +66,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-extrabold text-xl tracking-tight text-gray-900 leading-none">
-              LAVERIE
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold mt-0.5">
-              Premium Laundry
+              LAVERIE LAUNDRY
             </span>
           </div>
         </Link>
