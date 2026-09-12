@@ -101,7 +101,7 @@ export default function Footer() {
                 <Clock className="w-4 h-4 text-[#00C4D4] mt-0.5 shrink-0" />
                 <div>
                   <span className="text-white block font-medium">Daily Operations</span>
-                  <span className="text-xs text-gray-400">07:30 AM – 21:00 PM WITA</span>
+                  <span className="text-xs text-gray-400">07:30 AM - 21:00 PM WITA</span>
                   <span className="text-xs text-[#00C4D4] block mt-0.5">Express Cutoff: 10:00 AM for Same-Day</span>
                 </div>
               </div>

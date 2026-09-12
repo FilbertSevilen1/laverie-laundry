@@ -17,7 +17,7 @@ export const packages: PackageItem[] = [
     name: "Regular Care",
     price: "Rp 15.000",
     unit: "/ KG",
-    turnaround: "24 – 48 Hours",
+    turnaround: "24 - 48 Hours",
     description: "Comprehensive care for your everyday garments and essentials.",
     features: [
       "Gentle temperature-controlled wash",
@@ -54,7 +54,7 @@ export const packages: PackageItem[] = [
     badge: "BESPOKE CARE",
     price: "Rp 35.000",
     unit: "/ Piece / KG",
-    turnaround: "24 – 36 Hours",
+    turnaround: "24 - 36 Hours",
     description: "Specialized gentle care for suits, silks, designer wear, and fine linen.",
     features: [
       "Individual fabric inspection & spot treatment",

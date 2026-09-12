@@ -133,7 +133,7 @@ export default function About() {
                   </div>
                   <div>
                     <strong className="block text-gray-900 font-bold">Opening Hours</strong>
-                    <span>07:30 AM – 21:00 PM Daily (Express cutoff 10:00 AM)</span>
+                    <span>07:30 AM - 21:00 PM Daily (Express cutoff 10:00 AM)</span>
                   </div>
                 </div>
 
